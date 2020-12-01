@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "pltdbg"
+name = "tedasuke"
 version = "0.1.0"
 description = ""
 authors = ["ucpr <contact@ucpr.dev>"]

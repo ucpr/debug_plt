@@ -13,5 +13,5 @@ class tedasuke:
             return self._cb
         return getattr(self._instance, name)
 
-    def _cb(self):
+    def _cb(self, *args, **kwargs):
         pass

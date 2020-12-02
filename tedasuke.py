@@ -8,7 +8,7 @@ class tedasuke:
         self._level = logger.getEffectiveLevel()
 
     def __getattr__(self, name):
-        if self._passing_level == self._level:
+        if self._passing_level < self._level:
             return self._cb
         return getattr(self._instance, name)
 

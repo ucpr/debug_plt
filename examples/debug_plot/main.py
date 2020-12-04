@@ -1,5 +1,3 @@
-from logging import getLogger, DEBUG, ERROR
-
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -8,9 +6,6 @@ from skimage.draw import ellipse
 from skimage.transform import rotate
 
 from tedasuke import tedasuke
-
-logger = getLogger(__name__)
-logger.setLevel(ERROR)
 
 
 def create_test_image():
@@ -28,7 +23,7 @@ def create_test_image():
 def main():
     img = create_test_image()
     _, ax = plt.subplots()
-    dax = tedasuke(ax, logger, level=DEBUG)
+    dax = tedasuke(ax, True)
 
     ax.imshow(img, cmap=plt.cm.gray)
 

@@ -2,14 +2,12 @@ from logging import DEBUG
 
 
 class tedasuke:
-    def __init__(self, instance, logger, level=DEBUG):
+    def __init__(self, instance, flag: bool):
         self._instance = instance
-        self._passing_level = level
-        self._level = logger.getEffectiveLevel()
+        self._flag = flag
 
     def __getattr__(self, name):
-        # https://github.com/python/cpython/blob/master/Lib/logging/handlers.py#L722
-        if self._passing_level < self._level:
+        if not self._flag:
             return self._cb
         return getattr(self._instance, name)
 
